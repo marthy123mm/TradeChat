@@ -1,0 +1,264 @@
+
+/*PANTALLAS DE ALTA RESOLUCION*/
+@media screen and (max-width: 1920px){
+    #container{
+        width:20%;
+        height:auto;
+        padding: 20px;
+        display: block;
+        margin-right:auto;
+        margin-left: auto;
+        min-width: 400px;
+        
+       
+    }
+}
+
+/*PANTALLAS DE MEDIA RESOLUCIN*/
+@media screen and (max-width: 800px){
+    #container{
+        width:30%;
+        height:auto;
+        padding: 20px;
+        display: block;
+        margin-right:auto;
+        margin-left: auto;
+        min-width: 200px;
+       
+    }
+    
+    input,label,p{
+        font-size: 1.2em;
+    }
+    
+    h1{
+        font-size: 1.5em;
+    }
+    
+    p,option,select{
+        font-size: 1.2em;
+    }
+}
+
+
+/*PANTALLAS DE MOVILES*/
+@media screen and (max-width: 600px){
+    #container{
+        width:100%;
+        padding: 20px;
+        display: block;
+        margin-right:auto;
+        margin-left: auto;
+        min-width: 200px;
+    }
+    
+    input,label,p{
+        font-size: 2em;
+    }
+    
+    h1{
+        font-size: 2.5em;
+    }
+    
+    center p{
+        font-size: 2em;
+    }
+    
+}
+
+
+
+
+
+/*#container{
+    width: 30%;
+    padding: 20px;
+    display: block;
+    margin-right:auto;
+    margin-left: auto;
+    
+}*/
+
+
+
+
+/*LOGO*/
+#logo{
+    width: 60%;
+    display: block;
+    margin-right:auto;
+    margin-left: auto;
+}
+
+/*BOTON FACEBOOK*/
+#login_facebook{
+    text-align: center;
+    color: white;
+    background-color:dodgerblue;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight:bolder;
+}
+
+#login_facebook:hover{
+    text-align: center;
+    color: white;
+    background-color:deepskyblue;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight:bolder;
+}
+
+
+
+
+/*BOTON GOOGLE*/
+#login_google{
+    text-align: center;
+    color: white;
+    background-color:darkred;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight:bolder;
+}
+
+#login_google:hover{
+    text-align: center;
+    color: white;
+    background-color:firebrick;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight:bolder;
+}
+
+/*Inputs*/
+input[type="password"], input[type="email"], input[type="text"],input[type="tel"]{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: dimgray;
+    color: black;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    border-width:medium;
+    font-family:sans-serif;
+    
+    
+    
+}
+
+input[type="password"]:active, input[type="email"]:active, input[type="text"]:active,input[type="tel"]:active{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: dimgray;
+    color: black;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    font-family:sans-serif;
+    border-width:medium;
+    
+    
+    
+}
+
+
+
+
+/*LABELS*/
+label{
+    display: inline-block;
+    color: black;
+    font-size: auto;
+    font-weight: bolder;
+    font-family:sans-serif;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*INPUT TYPE BUTTON*/
+
+input[type="button"]{
+   
+    color: white;
+    display: inline-block;
+    background-color: darkgreen;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 2px;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    
+    
+}
+input[type="button"]:hover{
+   
+    color: white;
+    display: inline-block;
+    background-color:forestgreen;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 2px;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    
+    
+}
+
+/*LOGIN RED SOCIAL*/
+#login_social_red{
+    font-family: sans-serif;
+    
+}
+
+/*REGISTRO DIV BUTTON*/
+#register{
+    text-align: center;
+    color: white;
+    background-color:darkgreen;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight:bolder;
+    text-decoration:  none;
+}
+
+#register a{
+    text-decoration: none;
+    color: white;
+} 
+
+#register:hover{
+    text-align: center;
+    color: white;
+    background-color:forestgreen;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight:bolder;
+}
+
+
+p{
+    text-align: center;
+}
