@@ -1,0 +1,87 @@
+#logo{
+    
+    display: inline-block;
+    
+}
+
+#search{
+    
+    display: inline-block;
+    border: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    margin: 0 auto;
+    width: auto;
+}
+
+#search input{
+    
+   
+    border: none;
+    border-collapse: collapse;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    width: 300px;
+    font: 2sp;
+    
+}
+
+#search input:use{
+    
+   
+    border: none;
+    border-collapse: collapse;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    color: forestgreen;
+    
+    
+}
+
+
+#menu_item{
+    display: inline-block;
+    width: 30px;
+}
+
+#menu_icons{
+    display: inline-block;
+    float:right;
+    padding: 10px;
+}
+
+#navigation_bar{
+    
+   list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    padding-top: 10px;
+    overflow: hidden;
+    background-color: white;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+
+#background_image{
+    width: 100%;
+    height: 200px;
+    background-image: url(../images/img.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+
+#profile_image{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    background-image: url(../images/profile_image.png);
+    display: block;
+}
+
+
+
+/*ICON FONTS*/
+.material-icons.orange600 { color: #FB8C00; }

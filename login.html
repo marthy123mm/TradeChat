@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+ 
+<html lang="es">
+ 
+    <head>
+        <title>Iniciar sesión en Woomu</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="assets/css/register_style.css" />
+        <link rel="stylesheet" href="assets/css/login_style.css" />
+        <link rel="shortcut icon" href="assets/images/logo.jpg" />
+        
+        <script src="assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        
+        
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=600px" />
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8086817241444671",
+    enable_page_level_ads: true
+  });
+</script>
+        
+        
+    </head>
+ 
+    <body>
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+        
+        
+        
+
+        <div>
+            <div class="logo">
+                <img src="assets/images/logo.jpg">
+            </div>
+            
+            <div class="login" id="div-login">
+            
+                <div><input id="input-register" type="email" name="email" placeholder="ejemplo@ejemplo.com" class="input-register"/></div>
+                <div><input id="input-register" type="password" name="password" placeholder="escribe una contraseña"/></div>
+                <input id ="email-login" type="button" name="email-login" value="Entrar">
+                
+                
+                
+                
+                <label id="remember-user" for="remember-user">Recordarme</label>
+                <input id="remember-user" type="checkbox" name="remember">
+                
+                
+                <a id="forgot-password" href="#">¿Olvidaste tu contraseña?</a>
+                
+                <hr class="hr-social-network">
+                
+                <input id="facebook" type="button" value="Facebook">
+                <input id="google" type="button" value="Google+">
+            
+            
+            </div>
+            
+            
+            
+            <div class="register">
+                <p class="p-wellcome">Te damos la bienvenida a Woomu</p>
+                
+                <input id="input-register" type="text" name="name" placeholder="Nombre de usuario"/>
+                
+                <input id ="email-continue" type="button" value="Continuar" name="continue-register">
+                
+                
+                
+            </div>
+        
+        </div>
+        
+        
+        
+        <script>
+            
+            /*-----------------------------------------------------------------------------*/
+            /*---------------------------CONGIG FIREBASE-----------------------------------*/
+            /*-----------------------------------------------------------------------------*/
+            
+            var config = {
+                apiKey: "AIzaSyCzzbHICp-gnN3NUuRlwp5kPhTYeX1XbEg",
+                authDomain: "firesales-b6e0d.firebaseapp.com",
+                databaseURL: "https://firesales-b6e0d.firebaseio.com",
+                storageBucket: "firesales-b6e0d.appspot.com",
+                messagingSenderId: "810862976904"
+            };
+            firebase.initializeApp(config);
+            
+            
+            /*-----------------------------------------------------------------------------*/
+            /*---------------------------FACEBOOK LOGIN--------------------------------------*/
+            /*-----------------------------------------------------------------------------*/
+
+            // evento para el botón de login con facebook
+            document.getElementById('facebook').addEventListener('click', function() {
+                
+                // creo el provider de autenticación
+                var provider = new firebase.auth.FacebookAuthProvider();
+
+                // opcionalmente modifico el scope
+                provider.addScope('user_friends');
+
+                // accedo al servicio de autenticación
+                var authService = firebase.auth();
+                // autentico con Facebook
+                authService.signInWithPopup(provider)
+                        .then(function(result) {
+                            //todo correcto
+                            
+                            console.log('autenticado usuario ', result.user);
+                            
+                        })
+                        .catch(function(error) {
+                            console.log('Detectado un error:', error);
+                        });
+            })
+            
+            
+            
+            /*-----------------------------------------------------------------------------*/
+            /*---------------------------GOOGLE LOGIN--------------------------------------*/
+            /*-----------------------------------------------------------------------------*/
+            
+            // evento para el botón de login con google
+            document.getElementById('google').addEventListener('click', function() {
+            
+            var provider = new firebase.auth.GoogleAuthProvider();
+            provider.addScope('https://www.googleapis.com/auth/plus.login');
+                
+            var authService = firebase.auth();
+            // autentico con google
+            authService.signInWithPopup(provider)
+                    .then(function(result) {
+                        //todo correcto
+                        console.log('autenticado usuario ', result.user);
+                        alert('Bienvenido ' +result.user.displayName);
+                    })
+                    .catch(function(error) {
+                        console.log('Detectado un error:', error);
+                    });
+            })
+            
+            /*-----------------------------------------------------------------------------*/
+            /*---------------------------CORREO LOGIN--------------------------------------*/
+            /*-----------------------------------------------------------------------------*/
+            
+            
+            document.getElementById('email-login').addEventListener('click', function() {
+                
+                function passwordLevel (p){
+                    l = 0;
+                    v1 = 'aeiou1234567890 ';
+                    v2 = 'AEIOUbcdfghjklmnpqrst';
+                    v3 = 'vxyzBCDFGHJKLMNPQRST';
+                    v4 = 'VXYZ$@#';
+                    for (i = 0; i < p.length; i++){
+                        if (v1.indexOf(p[i]) != -1) l += 1;
+                        else if (v2.indexOf(p[i]) != -1) l += 2;
+                        else if (v3.indexOf(p[i]) != -1) l += 3;
+                        else if (v4.indexOf(p[i]) != -1) l += 4;
+                        else l += 5;
+                    }
+                    l *= 3;
+                    if(l > 100)l = 100;
+                    return l;
+                }
+                
+                
+                var correo = document.getElementsByName("email")[0].value;
+                var password = document.getElementsByName("password")[0].value;
+                var error = "";
+                $(".error").remove();
+                
+                if( !(/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(correo)) ) {//VALIDACION DE CORREO
+                    error="no-email";
+                    
+                }
+
+                else if (password.length < 5 ) {//VALIDAR PASSWORD 
+                    error="no-password";
+                }
+                
+                
+                else if (passwordLevel(password)< 30 ){
+                    error="simple-password"
+                }
+                
+                if (error == ""){
+                
+                    //INICIAR SESION
+                    var authService = firebase.auth();
+
+                    authService.signInWithEmailAndPassword(correo, password).then(function(result) {
+                            //todo correcto
+                            console.log('autenticado usuario ', result.user);
+                        })
+                        .catch(function(error_c) {
+                            console.log('Error:', error_c.code);
+                            error = error_c.code;
+                        
+                            switch(error){
+                                case "auth/wrong-password":
+                                    $("input[name=password]").before("<span class='error'>Contraseña incorrecta</span>");
+                                    //alert("Contraseña incorrecta");
+                                    break;
+                                case "auth/user-not-found":
+                                    alert("Registrar Usuario");
+                                    break;
+                                    
+                            
+                            }
+
+
+                    });
+                    
+                }
+                
+                
+                else{
+                    switch(error){
+                        case "no-email":
+                                $("input[name=email]").before("<span class='error'>Correo no válido</span>");
+                                break;
+                            
+                        case "no-password":
+                                $("input[name=password]").before("<span class='error'>Al menos 5 caracteres</span>");
+                                break;
+                            
+                        case "simple-password":
+                                $("input[name=password]").before("<span class='error'>Tu contraseña es muy simple</span>");
+                                break;
+                            
+                    }
+                    
+                }
+                
+                
+                
+            })
+            
+            
+            document.getElementById('email-continue').addEventListener('click', function() {
+                    var name = $("input[name=name]").val();
+                    console.log(name);
+                var user = firebase.auth().currentUser;
+                
+                    if (name.length < 5){
+                        $("input[name=name]").before("<span class='error'>Al menos 5 caracteres para tu nombre</span>");
+                    }
+                
+                    else{
+                        user.updateProfile({
+                          displayName: name
+                          
+                        }).then(function() {
+                            console.log("Nombre cambiado");
+                          
+                        }, function(error) {
+                            console.log("Error:"+error);
+                          
+                        });
+                        
+                        
+                    }
+                     
+            })
+            
+            
+            
+            //CAMBIO DE ESTADO DE LA AUTENTICACION-----------------------
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    
+                    var name = user.displayName;
+                    
+                    if (name == null){
+                        
+                        $("#div-login").hide(300);
+                        $(".register").show(300);
+                        
+                        
+                        
+                    }
+                    else{
+                        console.log("Bienvenido "+ name);
+                        location.href ="index.html";
+                        
+                    }
+                    
+                    
+                } else {
+                    console.log("No hay session activa");
+                    
+                    
+                }
+            });
+            
+            
+            //QUITAR EL SPAN DE ERRORES
+            $(document).ready(function () {
+    
+            $("input[name=email], input[name=password]  , input[name=name]").keyup(function(){
+                if( $(this).val() != "" ){
+                    $(".error").fadeOut();
+                    return false;
+                }
+            });
+    
+            });
+            
+            
+            
+    
+    </script>
+        
+    
+        
+    </body>
+    
+    
+    
+</html>

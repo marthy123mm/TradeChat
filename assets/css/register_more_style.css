@@ -1,0 +1,40 @@
+#photo_selector{
+    
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+#description_image{
+    width: 50%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#image{
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+select,option{
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: dimgray;
+    color: black;
+    border-width:medium;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    font-family:sans-serif;
+}
+
+
+

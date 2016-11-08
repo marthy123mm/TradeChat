@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+ 
+<html lang="es">
+ 
+    <head>
+        <title>Bienvenido a Woomu</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="assets/css/index.css" />
+        
+        <link rel="shortcut icon" href="assets/images/logo.jpg" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/post_style.css" />
+        
+        
+        <link rel="stylesheet" href="assets/js/Trumbowyg/ui/trumbowyg.css" />
+        <link rel="stylesheet" href="assets/js/Trumbowyg/plugins/colors/ui/trumbowyg.colors.min.css" />
+        
+        
+        <script src="assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="assets/js/menu-tab.js" type="text/javascript"></script>
+        
+    </head>
+ 
+    <body>
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+       
+        
+        <header>
+        
+            <div class="nav-container">
+                <table width="100%" class="nav-container">
+                    <tr>
+                        <td><div class="logo"><img src="assets/images/logo.jpg" width="48px"></div></td>
+                        <td><p>Inicio</p></td>
+                        <td class="menu-icon"><i id="m_navigate" class="material-icons md-28">near_me</i></td>
+                        <td>
+                            <div class="search">
+                               
+                                <i id="m_add_alarm" class="material-icons">alarm_add</i>
+                                <input type="text" placeholder="Buscar" id="serach-imput"/>
+                                <i id="m_search" class="material-icons">search</i>
+                            </div>
+                        </td>
+                        
+                        <td class="menu-icon"><i class="material-icons" id="m_add_post">add_box</i></td>
+                        
+                        <td class="menu-icon"><i class="material-icons" id="m_notifications" >notifications_none</i></td>
+                        <td class="menu-icon"><i class="material-icons" id="m_messages">chat_bubble_outline</i></td>
+                        
+                        <td id ="config-profile" class="menu-icon"><i id="m_config" class="material-icons">more_vert</i></td>
+                    </tr>
+                </table>
+            </div>
+        </header>
+        
+        <br><br><br>
+        <div id="LocalizationMenu">
+            <i id="icon_menu_vert_Localization" class="material-icons">Ubicacion</i>
+        </div>
+        <div id="verticalCategoryMenu">
+            
+            <i id="icon_menu_vert_smartphone" class="material-icons">smartphone</i><p>&#8212</p>
+            <i id="icon_menu_vert_computer" class="material-icons">computer</i><p>&#8212</p>
+            <i id="icon_menu_vert_videogame_asset" class="material-icons">videogame_asset</i><p>&#8212</p>
+            <i id="icon_menu_vert_videogame_asset" class="material-icons">directions_car</i><p>&#8212</p>
+            <i id="icon_menu_vert_home" class="material-icons">home</i><p>&#8212</p>
+            <i id="icon_menu_vert_weekend" class="material-icons">weekend</i><p>&#8212</p>
+            <i id="icon_menu_vert_group" class="material-icons">group</i><p>&#8212</p>
+            <i id="icon_menu_vert_restaurant" class="material-icons">restaurant</i>
+        </div>
+        
+        
+        <div id="add_main"></div>
+        
+        <br><br>
+        <div id="main_container">
+        
+            <div id="recent_posts"></div>
+            
+            
+            <div id="categoryzed_post"></div>
+            
+            
+            <div id="near_business"></div>
+            
+            <div id="personal_groups"></div>
+        
+        </div>
+        
+        
+        <!-------------------------------------------------------------------------------------------->
+        <!------------------------- MODAL PARA REALIZAR PUBLICACION ---------------------------------->
+        <!-------------------------------------------------------------------------------------------->
+        
+        <div class="modal">
+            
+                <div id="post_modal">
+
+                <div id="top_bar_modal" ><i id ="close-new-post" class="material-icons">close</i></div>
+
+
+                <div id="top_menu_modal">
+
+                    <div id="post_category">
+
+                        <i class="material-icons">style</i>
+
+                        <select name="category">
+
+                          <option value="volvo">Volvo</option>
+                          <option value="saab">Saab</option>
+                          <option value="mercedes">Mercedes</option>
+                          <option value="audi">Audi</option>
+
+                        </select>
+                    </div>
+
+                    <div id="post_mode_menu">
+
+                        <div id="simple-post-btn" onclick="changePosType(event,'simple-post-btn')"><i class="material-icons">description</i><label>Simple</label></div>
+                        <div id="advanced-post-btn" onclick="changePosType(event,'advanced-post-btn')"><i class="material-icons">code</i><label>Avanzado</label></div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="post-content-container">
+
+                    <table width="100%">
+
+                        <tr>
+                            <td id="simple-post-images">
+
+                                <div >
+
+                                    <div>
+                                        <div id="holder">
+                                            <p>Arrastra imagenes aqui!</p>
+                                        </div>
+
+                                        <div id="select-picture">
+                                            <label for="file-input" id="btn-find-image"><i class="material-icons md-48">add</i></label>
+                                            <input type="file" id="file-input" style="display:none" accept="image/jpeg,image/gif,image/gif,image/bmp,image/tiff"/>
+                                        </div>
+
+                                    </div>
+                                    <div id="uploaded-images"></div>
+
+                                </div>
+
+
+                            </td>
+
+
+                            <td id="post-content">
+
+                                <div style="width:100%">
+
+
+                                        <div><input id="post-title" type="text" placeholder="Titulo de la publicación"></div>
+
+                                        <div id ="post-location-div">
+                                            <i class="material-icons">location_on</i>
+                                            <input id="post-location" type="text" placeholder="Ubicacion">
+                                        </div>
+
+                                        <div id ="post-price-div">
+                                            <i class="material-icons">attach_money</i>
+                                            <input id="post-price" type="number" placeholder="Precio">
+                                            <label>Nuevo</label><input type="checkbox"> 
+                                        </div>
+
+                                    <div id="post-content-div">
+                                        <div id="simple-editor"><textarea id="post-description-simple" style="width:100%;" rows="10"></textarea></div>
+                                        <div id="advanced-editor-div"><div id="advanced-editor"></div></div>
+
+                                    </div>
+
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+
+
+                </div>
+
+                <div>
+
+                    <i id="post-help" class="material-icons md-36">help</i>
+                    <input type="button" name="save-post" value="Publicar" id="save-post">
+
+                </div>
+
+
+            </div>
+        
+        </div>
+        
+        <!--SCRIPTS DEL MODAL DE PUBLICACION-->
+        <script>
+            
+            $( document ).ready(function() {
+                document.getElementById("simple-post-btn").click();
+            });
+          
+        </script>
+        
+        <script>
+            //SELECCION DE TIPO DE PUBLICACION
+
+            function changePosType(evt, postKind) {
+                
+                /*TIPOS DE EDITORES*/
+                var simple_editor =document.getElementById("simple-editor");            
+                var advanced_editor = document.getElementById("advanced-editor-div");
+                
+                /*QUITAR CLASE DE ACTIVO*/
+                document.getElementById("simple-post-btn").className = document.getElementById("simple-post-btn").className.replace(" kindPostSelected", "");
+                document.getElementById("advanced-post-btn").className = document.getElementById("simple-post-btn").className.replace(" kindPostSelected", "");
+                
+                /*MOSTAR CONTENIDO*/
+                if (postKind == "simple-post-btn"){
+                    advanced_editor.style.display = "none";
+                    simple_editor.style.display = "block";
+                    document.getElementById("simple-post-images").style.display = "block";
+                }
+                else if(postKind == "advanced-post-btn"){
+                    
+                    advanced_editor.style.display = "block";
+                    simple_editor.style.display = "none";
+                    document.getElementById("simple-post-images").style.display = "none";
+                }
+                
+                //CAMBIAR EL STYLO A ACTIVOS
+                evt.currentTarget.className += " kindPostSelected";
+                
+            }
+            
+        </script>
+        
+        <!-- FIN SCRIPTS MODAL DE PUBLICACION-->
+        
+        
+        <!-- CRIPT CARGAR IMAGENES -->
+        <script>
+            /*SCRIPT DE AÑADIR IMAGENES*/
+            var files = new Array();
+            var upload_images = document.getElementById('uploaded-images'); 
+            var holder = document.getElementById('holder'),
+
+            tests = {
+                filereader: typeof FileReader != 'undefined',
+                dnd: 'draggable' in document.createElement('span'),
+                formdata: !!window.FormData,
+                progress: "upload" in new XMLHttpRequest
+            }, 
+
+            acceptedTypes = {
+                'image/png': true,
+                'image/jpeg': true,
+                'image/gif': true
+            }
+
+            function previewfile(file) {
+                if (tests.filereader === true && acceptedTypes[file.type] === true) {
+                    var reader = new FileReader();
+                    reader.onload = function (event) {
+                        var image = new Image();
+                        image.src = event.target.result;
+                        image.width = 80; // a fake resize
+                        upload_images.appendChild(image);
+                    };
+
+                    reader.readAsDataURL(file);
+                    files.push(file);
+                }  else {
+                /*MANDAR MENSAJE DE ARCHIVO NO VALIDO*/
+                }
+            }
+
+            function readfiles(files) {
+                
+                var formData = tests.formdata ? new FormData() : null;
+                for (var i = 0; i < files.length; i++) {
+                  if (tests.formdata) formData.append('file', files[i]);
+                  previewfile(files[i]);
+                }
+            }
+            
+
+            if (tests.dnd) { 
+                holder.ondragover = function () { this.className = 'hover'; return false; };
+                holder.ondragend = function () { this.className = ''; return false; };
+                holder.ondrop = function (e) {
+                    this.className = '';
+                    e.preventDefault();
+
+                    readfiles(e.dataTransfer.files);
+                    alert("Total de archivos " + files.length);
+
+                }
+
+            }else {
+                fileupload.className = 'hidden';
+                fileupload.querySelector('input').onchange = function () {
+                    readfiles(this.files);
+                };
+            }
+
+
+
+            document.getElementById("file-input").addEventListener('change', function( e ){
+                var filesAt = this.files; // FileList object
+                //Obtenemos la imagen del campo "file". 
+                for (var i = 0; i<filesAt.length ; i++) {
+                        var f = filesAt[i];
+                        previewfile(f);
+                }
+            });
+
+    </script><!-- FIN SCRIPT CARGAR IMAGENES-->
+    
+        
+    <script>        
+            /*-----------------------------------------------------------------------------*/
+            /*---------------------------CONGIG FIREBASE-----------------------------------*/
+            /*-----------------------------------------------------------------------------*/
+            
+            var config = {
+                apiKey: "AIzaSyCzzbHICp-gnN3NUuRlwp5kPhTYeX1XbEg",
+                authDomain: "firesales-b6e0d.firebaseapp.com",
+                databaseURL: "https://firesales-b6e0d.firebaseio.com",
+                storageBucket: "firesales-b6e0d.appspot.com",
+                messagingSenderId: "810862976904"
+            };
+            firebase.initializeApp(config);
+            
+            
+            //CAMBIO DE ESTADO DE LA AUTENTICACION-----------------------
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    /*console.log("Bienvenido "+ user.displayName);
+                    console.log("Bienvenido "+ user.photoURL);*/
+                    
+                    
+                    if (user.photoURL == null){
+                        $("#config-profile").before("<td id ='profile_image' class='menu-icon' width='40px'><i id='profile-image-menu' class='material-icons'>person</i></td>");
+                    }
+                    else{
+                        
+                        $("#config-profile").before("<td id='profile_image' class='menu-icon' width='40px'><img id='profile-image-menu' src='"+user.photoURL+"'/><td>");
+                    }
+                    
+                    
+                    document.getElementById('profile-image-menu').addEventListener('click', function() {
+                
+                
+                        location.href ="my_profile.html";
+
+
+                    })
+                    
+                    
+                    /*EVENTO DE AGREGAR POST*/
+                    document.getElementById('m_add_post').addEventListener('click', function() {
+                
+                            var modal = document.getElementsByClassName("modal")[0];
+                            modal.style.display = "block";
+
+                    })
+                    /*CERAR PUBLICACION DE NUEVO POST*/
+                    document.getElementById('close-new-post').addEventListener('click', function() {
+                
+                            var modal = document.getElementsByClassName("modal")[0];
+                            modal.style.display = "none";
+
+                    })
+                    
+                    
+                    
+                    /*EVENTO DE PUBLICAR*/
+                    document.getElementById("save-post").addEventListener('click', function( e ){
+
+                        $('#description_advanced').trumbowyg('saveRange');
+                        console.log($('#advanced-editor').trumbowyg('html'));
+
+                    })
+                    
+        
+                    
+                } else {
+                    location.href ="login.html";
+                    
+                    
+                }
+            });
+
+            
+            
+        
+        </script>
+    
+
+    </body>
+    
+    
+    <!--***************************************************************************************-->
+    <!--***************** SCRIPTS Y CONFIGURACION DE EDITOR AVANZADO **************************-->
+    <!--***************************************************************************************-->
+    
+    <script src="assets/js/Trumbowyg/trumbowyg.js"></script>
+    <script src="assets/js/Trumbowyg/plugins/pasteimage/trumbowyg.pasteimage.min.js"></script>
+    <script src="assets/js/Trumbowyg/plugins/colors/trumbowyg.colors.min.js"></script>
+    <script src="assets/js/Trumbowyg/plugins/base64/trumbowyg.base64.min.js"></script>
+    <script type="text/javascript" src="assets/js/Trumbowyg/langs/es.min.js"></script>
+    
+    <script> 
+        $("#advanced-editor").trumbowyg({
+            lang: 'es',
+    
+            btnsDef: {
+        
+                image: {
+                    dropdown: ['insertImage', 'base64'],
+                    ico: 'insertImage'
+                },
+        
+                jusify_icons:{
+                    dropdown: ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                    ico: 'justifyLeft'    
+                },
+
+                list_icons:{
+                    dropdown: ['unorderedList', 'orderedList'],
+                    ico: 'unorderedList'    
+                }
+            },
+   
+    
+            btns: [
+                ['foreColor','backColor','formatting'],
+                'btnGrp-design',
+                ['link','image'],
+                'jusify_icons',
+                'list_icons',
+                ['horizontalRule']
+            ]
+        });
+        
+    </script>
+</html>

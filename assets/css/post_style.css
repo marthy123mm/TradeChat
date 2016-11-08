@@ -1,0 +1,377 @@
+/*MODAL POST*/
+#post_modal{
+    width: 600px;
+    min-width: 600px;
+    margin: 70px auto;
+    background-color: white;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    -moz-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    
+}
+
+
+/*BARRA SUPERIOR*/
+#top_bar_modal{
+    background-color: forestgreen;
+    padding: 5px;
+    color: aliceblue;
+}
+
+#close-new-post{
+   cursor: pointer;
+}
+
+#close-new-post:hover{
+   color: azure;
+}
+
+
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/*--------------------------------------------------------*/
+/*---------------BARRA DE MENU SUPERIOR-------------------*/
+/*--------------------------------------------------------*/
+/*DIV PRINCIPAL CONTENDEROR*/
+#top_menu_modal{
+    width: 100%;
+}
+
+
+/*-------COMBO CATEGORIAS-----*/
+
+#post_category{
+    width: auto;
+    padding: 5px;
+    display: inline-block;
+    color:#585858;
+}
+
+#post_category i{vertical-align: text-bottom;}
+
+/*-------MENU MODO DEL POST-----*/
+#post_mode_menu{
+   width: auto;
+    padding: 5px;
+    display: inline-block;
+    color: #585858;
+    float: right;
+    
+}
+
+#post_category select{
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #585858;
+    border: none;
+    border-bottom: 1px solid #424242;
+    
+}
+
+/*BOTON DE POST SIMPLE*/
+#simple-post-btn{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+#simple-post-btn i{vertical-align: text-bottom}
+
+#simple-post-btn:hover{
+    border-bottom: 2px solid #6E6E6E;
+    
+}
+
+/*BOTON DE POST AVANZADO*/
+#advanced-post-btn{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+#advanced-post-btn:hover{
+    border-bottom: 2px solid #6E6E6E;
+    
+}
+
+#advanced-post-btn i{vertical-align: bottom}
+
+/*BOTON DE TIPO DE POST SELECCIONADO*/
+.kindPostSelected{
+    border-bottom: 2px solid #6E6E6E;
+}
+
+
+
+/*--------------------------------------------------------*/
+/*--------------CONTENIDO SIMPLE DEL POST-----------------*/
+/*--------------------------------------------------------*/
+
+/*-------------------DIVS GENERALES-----------------------*/
+#simple-post-images{
+    width: 100px;
+    vertical-align: top;
+}
+
+
+#post-content{
+    width:100%;
+    padding: 20px;
+}
+
+
+/*CONTENEDOR PRINCIPAL DEL POST*/
+#post-content-container{
+    
+}
+
+
+
+/*-----------------------INPUTS---------------------------*/
+/*TITULO DE LA PUBLICACION*/
+#post-title{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #585858;
+    font-family: sans-serif;
+    font-size: 1em;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+    color: #585858;
+}
+/*LOCALIZACION*/
+#post-location{
+    border: none;
+    border-bottom: 1px solid #585858;
+    font-family: sans-serif;
+    font-size: 1em;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+    color: #585858;
+}
+
+/*PRECIO DEL POST*/
+#post-price{
+    -moz-appearance:textfield;
+    margin-left: -3px;
+    font-size: 1em;
+    font-family: sans-serif;
+    border: none;
+    border-bottom: 1px solid dimgray;
+}
+
+/*----------QUITA LAS FLECHITAS DEL INPUT TYPE NUMBER----------*/
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+/*DESCRIPCION SIMPLE DEL POST*/
+#post-description-simple{
+    resize: none;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+#save-post{
+    background-color: forestgreen;
+    border: none;
+    font-family: sans-serif;
+    font-size: 1em;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: white;
+    float: right;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+
+
+            
+
+
+/*------------------------DIVS----------------------------*/
+
+/*LOCALIZACION DIV*/
+#post-location-div{
+    padding-top: 3px;
+    width: 100%;
+    color: #585858;
+}
+
+/*PRECIO DIV*/
+#post-price-div{
+    width: 100%;
+    padding-top: 3px;
+}
+#post-price-div i{
+    vertical-align: text-bottom;
+    color: #585858;
+    
+}
+#post-price-div label{
+    vertical-align: text-bottom;
+    font-size: 1em;
+    font-family: sans-serif;
+    margin-left: 40px;
+    padding: 10px;
+    color: #585858;
+}
+
+/*CONTENIDO DEL POST DIV*/
+#post-content-div{
+    margin-top: 9px;
+    width: 100%;
+}
+
+#simple-editor{
+    min-height: 100px;
+}
+
+
+
+
+
+/*EDITOR AVANZADO DE TEXTO*/
+#advanced-editor-div{
+    width: 100%;
+}
+
+#simple-post-images{
+    -webkit-animation: sizeEffect 0.5s;
+    animation: sizeEffect 0.5s; /* Fading effect takes 1 second */
+}
+
+
+@-webkit-keyframes sizeEffect {
+    from {width: 0;}
+    to {width: 100;}
+}
+
+
+#simple-editor, #advanced-editor-div{
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+/*--------------------------------------------------------*/
+/*------------------- CARGA DE IMAGENES-------------------*/
+/*--------------------------------------------------------*/
+
+/* ----------DIV DONDE SE ARRASTRAN LAS IMAGENES----------*/
+#holder { 
+    border: 2px dashed #ccc;
+    width: 80px;
+    min-height: 80px;
+    margin: 10px;
+    padding: 10px;
+    display: block;
+    float: left;
+}
+#holder.hover { 
+    border: 4px dashed #0c0; 
+}
+#holder img { 
+    display: block; 
+    margin: 10px auto;
+    padding: 10px;
+    float: right;
+}
+
+#holder p{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 1em;
+    color: #585858;
+}
+
+/*---------------SELECCION MANUAL DE IMAGENES-----------------*/
+#select-picture{
+    border: 2px dashed #ccc;
+    width: 80px; 
+    min-height: 80px; 
+    margin: 10px; 
+    padding: 10px; 
+    display: inline-block;
+
+}
+
+#btn-find-image{
+
+   width: 100%;
+    height: 100%;
+
+}
+
+#btn-find-image i{
+    width: 100%;
+    text-align: center;
+    padding-top: 25%;
+    color: #585858;
+
+}
+
+
+/*--------------TIRA DE IMAGENES CARGADAS----------------------*/
+#uploaded-images{
+    width: 100%;
+    overflow:auto;
+    max-height: 100px;
+    max-height: 150px;
+
+}
+
+#uploaded-images img{
+    display: inline-block; margin: 10px;
+
+}
+
+
+#post-help{
+    margin-left: 20px;
+    color: #585858;
+}
+
+
+
+/*-------------------------------------------------------*/
+/*------------------- GOOGLE ICONS-----------------------*/
+/*-------------------------------------------------------*/
+
+
+/*GOOGLE SIZES*/
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }

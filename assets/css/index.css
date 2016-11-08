@@ -1,0 +1,834 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* BARRA DE NAVEGACION */
+.nav-container{
+    z-index: 9999; 
+    position: fixed; 
+    left: 0; top: 0; 
+    width: 100%;
+    height: 45px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #DCDCDC;
+
+}
+
+.logo{
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-container p{
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* LANDSCAPE IMAGE*/
+
+.landscape-image{
+   
+    background-repeat:no-repeat;
+    background-position:left;
+    height: 250px;
+    position: relative;
+    top: 45px;
+}
+
+
+/* IMAGEN DE PERFIL*/
+.profile-image{
+    width: 150px;
+    height: 150px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    border-bottom-style:inset;
+    position: relative;
+    left: 20px;
+    top: 133px;
+}
+
+
+/*CAMBIAR IMAGEN DE PERFIL*/
+/*CAMBIAR A my_profile.css*/
+.change_image_profile{
+    position:relative;
+    padding: 8px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 8px;
+    left: 0px;
+    top: 118px;
+    font-size: 2sp;
+    text-align: center;
+    cursor: pointer;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    background: #DFDFDF;
+    color: #A4A4A4;
+    
+
+}
+
+.change_image_profile:hover{
+     /*position: relative;*/
+    position:relative;
+    padding-left: 1px;
+    padding-bottom: 8px;
+    padding-right: 1px;
+    left: 0px;
+    top: 118px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    box-shadow:0px 1px 1px #DFDFDF;
+    /*border-radius: 20%;*/
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    background: forestgreen;
+    
+}
+
+
+
+/* ----CAJA DE BUSQUEDA---- */
+.search{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0 auto;
+    border: 2px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #C6C6C6;
+    background-color: #FCFCFC;
+    height: 18px;
+    width: 97%;
+}
+
+.search:hover{
+    border-color:#9B9A9A;
+}
+
+.search i{
+    margin: 0 auto;
+    vertical-align:middle;
+    cursor: pointer;
+}
+
+.menu-icon{
+    text-align: center;
+    
+    
+}
+
+.menu-icon i{
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+/*---CUADRO DE BUSQUEDA*/
+div.search{
+    padding-bottom: 14px;
+}
+.search input{
+    font-size: 18px;
+    color:#2E2E2E;
+    font-size: 2sp;
+    background-color:#FCFCFC;
+    border: none;
+    outline-style: none;
+    height: 20px;
+    width: 88%;
+    border-left:1px solid #C6C6C6;
+    padding-left: 7px;
+
+}
+
+#m_search.material-icons{
+    opacity: 0.5;
+}
+
+#m_search.material-icons:hover{
+    opacity: 1;
+}
+
+
+#m_navigate.material-icons{
+    opacity: 0.5;
+}
+
+#m_navigate.material-icons:hover{
+    opacity: 1;
+}
+
+#m_add_alarm.material-icons{
+    opacity: 0.5;
+    padding-right: 3px;
+    padding-left: 3px;
+
+}
+#m_add_alarm.material-icons:hover{
+    opacity: 1;
+    padding-right: 3px;
+    padding-left: 3px;
+
+}
+
+/*---icono de foto de perfil-*/
+#profile-image-menu{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 100%;
+    vertical-align:middle;
+    cursor: pointer;
+    
+}
+
+#m_config.material-icons{
+   /* background: none;
+    border-radius: 25px;*/
+    opacity: 0.5;
+}
+
+#m_config.material-icons:hover{
+    /*background: #F7F7F7;
+    border-radius: 15px;
+    border-width: 10px;*/
+    opacity: 1;
+}
+
+#m_notifications.material-icons{
+     opacity: 0.5;
+    
+}
+
+#m_notifications.material-icons:hover{
+   /* background: #F7F7F7;
+    border-radius: 15px;
+    border-width: 10px;*/
+    opacity: 1;
+}
+
+#m_add_post.material-icons{
+     opacity: 0.5;
+}
+
+#m_add_post.material-icons:hover{
+    /*background: #F7F7F7;
+    border-radius: 15px;
+    border-width: 10px;*/
+    opacity: 1;
+}
+
+#m_messages.material-icons{
+     opacity: 0.5;
+    /*border-right: 1px solid #C6C6C6;*/*
+}
+
+#m_messages.material-icons:hover{
+    /*background: #F7F7F7;
+    border-radius: 15px;
+    border-width: 10px;*/
+     opacity: 1;
+}
+
+
+
+/*-------------------------------------------------------*/
+/*------- MENU TIENDA, MIS PUBLICACIONES, PERFIL---------*/
+/*-------------------------------------------------------*/
+
+/* TAB MI TIENDA, MIS PUBLICACIONES, PERFIL, */
+
+/* ESTILO DE LA LISTA */
+ul.tab-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Float the list items side by side */
+ul.tab-menu li {display: inline-block;}
+
+/* Style the links inside the list items */
+ul.tab-menu li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab-menu li a:hover {
+    /*background-color: #D2E4C3;*/
+}
+
+/* Create an active/current tablink class */
+ul.tab-menu li a:focus, .active {
+    border-bottom: 2px solid forestgreen;
+  
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/*ANIMACIONES*/
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+/*-------------------------------------------------------*/
+/*------- MENU TIENDA, MIS PUBLICACIONES, PERFIL---------*/
+/*-------------------------------------------------------*/
+
+/* TAB MI TIENDA, MIS PUBLICACIONES, PERFIL, */
+
+/* ESTILO DE LA LISTA DEL MENU DE CONFIGURACION*/
+ul.tab-menu {
+    top: 330px;
+    list-style-type:none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-shadow:0px 1px 1px #DFDFDF;
+}
+
+/* Float the list items side by side */
+ul.tab-menu li {
+    display: inline-block;
+}
+
+/* Style the links inside the list items */
+ul.tab-menu li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.15em;
+    font-family: sans-serif;
+}
+
+/* Change background color of links on hover */
+ul.tab-menu li a:hover {
+    /*background-color: #E9E9E9;*/
+    padding: 5px 5px;
+    border-bottom: 4px solid forestgreen;
+    
+}
+
+/* Create an active/current tablink class */
+ul.tab-menu li a:focus, .active {
+    border-bottom: 4px solid forestgreen;
+  
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/*ANIMACIONES*/
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+/*-------------------------------------------------------*/
+/*--------------- MENU LIST PROFILE----------------------*/
+/*-------------------------------------------------------*/
+
+/*DIV CONTENEDOR DE LISTA*/
+.list-menu-profile{
+    position: absolute;
+    left: 20px;
+    top: 450px;
+    padding: 0px 0px 54px;
+    width: 12%;
+    border: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 4px;
+}
+
+/*------TITULO DE LA CAJA DE LA LISTA DEL MENU-----*/
+.title-tab-menu-vert{
+     position: absolute;
+    left: 20px;
+    top: 420px;
+    padding: 1px;
+    margin: 0px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.15em;
+    font-family: sans-serif;
+    
+}
+
+.title-tab-menu-vert i,p{
+    margin: 0px;
+    vertical-align: bottom;
+
+}
+
+/*----------------MENU VERTICAL-------------------*/
+
+ul.tab-menu-vert {
+    list-style-type: none;
+    margin: 0;
+    padding: 1px 1px 10px 1px;
+    width: 100%;
+    overflow:visible;
+
+    
+    
+}
+
+/* Style the links inside the list items */
+ul.tab-menu-vert li a {
+    width: 150px;
+    display: inline-block;
+    color: black;
+    padding: 10px 1px 5px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.1em;
+    border-bottom: 1px solid #ccc;
+    font-family: sans-serif;
+    opacity: 0.5;
+    
+}
+
+/* Change background color of links on hover */
+ul.tab-menu-vert li a:hover {
+    width: 150px;
+    opacity: 1;
+    padding: 10px 1px 5px 10px;
+    background-color: none;
+    border-left: 5px solid forestgreen;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    
+    
+}
+
+/* Create an active/current tablink class */
+ul.tab-menu-vert li a:focus, .activeProfile {
+    width: 150px;
+    opacity: 1;
+    background-color: none;
+    border-left: 5px solid forestgreen;
+    padding: 10px 1px 5px 10px;
+    
+}
+
+
+
+/*--------------- CONFIGURACION DEL PERFIL---------------*/
+.profile-conf{
+    font-size: 18px;
+    position: absolute;
+    left: 200px;
+    top: 450px;
+    margin: 0 auto;
+    padding-left: 40px;
+    width: auto;
+
+}
+
+
+/*Imagen de perfil*/
+
+
+
+
+
+
+/*-------------------------------------------------------*/
+/*------------------- GOOGLE ICONS-----------------------*/
+/*-------------------------------------------------------*/
+
+
+/*GOOGLE SIZES*/
+
+.material-icons.md-18 { 
+    font-size: 18px; 
+}
+.material-icons.md-24 { 
+    font-size: 24px; 
+}
+.material-icons.md-36 { 
+    font-size: 36px; 
+}
+.material-icons.md-48 { 
+    font-size: 48px; 
+}
+
+
+
+
+/*UTILDIADES*/
+
+/*---linea divisora de informacion--*/
+hr.dotted-line {
+  border: 0;
+  border-top: 1px dashed #C9C9C9;
+  text-align: center;
+}
+
+hr.dotted-line:after {
+    content: '\002022\002022\002022\002022';
+    display: inline-block;
+    position: relative;
+    top: -11px;
+    background: #fff;
+    color: #C9C9C9;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+
+.title-info{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: .95em;
+    font-weight: bolder;
+    cursor: context-menu;
+}
+
+
+.input_line{
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline-style: none;
+    width: 100%;
+    padding: 4px;
+    margin: 2px;
+    font-family:sans-serif;
+    font-size: 0.9em;
+}
+
+.input_line:hover{
+    border: none;
+    border-bottom: 2px solid forestgreen;
+    outline-style: none;
+    width: 100%;
+    padding: 4px;
+    margin: 2px;
+    font-family:sans-serif;
+    font-size: 0.9em;
+}
+
+
+
+.text-column{
+    font-size:14px;
+    font-family: sans-serif;
+    font-size: 0.9em;
+    padding: 4px;
+}
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------*/
+/*------------- MODAL CAMBIAAR FOTO DE PERFIL------------*/
+/*-------------------------------------------------------*/
+
+/* FONDO DEL MODAL */
+.modalChangeProfileImage {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* CONTENIDO */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+}
+
+/* BOTON DE CERRAR */
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#newProfileImage{
+    
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/*LABEL DE EXAMINAR(BUSCAR IMAGEN)*/
+#selectProfileImageLabel{
+    font-size: 1em;
+    padding: 10px;
+    background-color: #424242;
+    color: azure;
+    border: none;
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#selectProfileImageLabel:hover{
+    -webkit-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.74);
+    -moz-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.74);
+    box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.74);
+    
+    transition-property: box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: linear, linear;
+    transition-delay: 0.1s; 
+
+}
+
+
+/*BOTON PARA GUARDAR LA NUEVA IMAGEN*/
+#saveProfileImage{
+    font-size: 0.95em;
+    padding: 10px;
+    background-color:forestgreen;
+    color: azure;
+    border: none;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    
+    font-family: sans-serif;
+    
+}
+
+#saveProfileImage:hover{
+     -webkit-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.74);
+    -moz-box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.74);
+    box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.74);
+    
+    transition-property: box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: linear, linear;
+    transition-delay: 0.1s;
+}
+
+
+/*-------------------------------------------------------*/
+/*-------- MENU DE ICONOS CATEGORIAS VERTICAL------------*/
+/*-------------------------------------------------------*/
+
+#LocalizationMenu{
+    height: auto;
+    width: 40px;
+    text-align: center;
+    border: 1px solid #BDBDBD;
+    border-radius: 15px;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 84%;
+    right: 96.5%;
+    vertical-align:bottom;
+    
+    z-index: 4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    -moz-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+}
+
+#verticalCategoryMenu {
+    height: auto;
+    width: 40px;
+    text-align: center;
+    border: 1px solid #BDBDBD;
+    border-radius: 15px;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 38%;
+    right: 96.5%;
+    vertical-align:bottom;
+    
+    z-index: 4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    -moz-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+}
+
+#verticalCategoryMenu p {
+    color: #BDBDBD;
+}
+
+#verticalCategoryMenu i {
+    display: block;
+    transition: all 0.3s ease;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+
+#verticalCategoryMenu i:hover {
+    transition: all 0.3s ease;
+    background-color:azure;
+    
+}
+
+
+
+/*-------------------------------------------------------*/
+/*------------ ESTILOS CONTENIDO PRINCIPAAL--------------*/
+/*-------------------------------------------------------*/
+
+
+/*-------------BANER DE PUBLICIDAD-----------------------*/
+#add_main{
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+    background-color: firebrick;
+    height: 300px;
+}
+
+
+/*-----------CONTENEDOR PRINCIPAL---------------------------*/
+#main_container{
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    -moz-box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.30);
+    
+}
+
+
+#recent_posts{
+    
+    width: 100%;
+    display: block;
+    height: 200px;
+    background-color: dimgray;
+    margin-bottom: 20px;
+    
+    
+    
+}
+
+#categoryzed_post{
+    
+    width: 100%;
+    display: block;
+    height: 200px;
+    background-color:bisque;
+    margin-bottom: 20px;
+    
+    
+}
+
+
+#near_business{
+    
+    width: 100%;
+    display: block;
+    height: 200px;
+    background-color:darkturquoise;
+    margin-bottom: 20px;
+    
+    
+}
+
+
+#personal_groups{
+    width: 100%;
+    display: block;
+    height: 200px;
+    background-color:chocolate;
+    margin-bottom: 20px;
+    
+    
+}
+
+
+
